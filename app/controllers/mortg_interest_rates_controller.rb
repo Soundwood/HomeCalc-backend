@@ -1,0 +1,2 @@
+class MortgInterestRatesController < ApplicationController
+end

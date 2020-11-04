@@ -1,0 +1,2 @@
+class PropTaxRatesController < ApplicationController
+end
