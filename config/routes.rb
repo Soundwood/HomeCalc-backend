@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :mortg_interest_rates
-  resources :prop_tax_rates
+  # resources :mortg_interest_rates
+  # resources :prop_tax_rates
   resources :scenarios
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
