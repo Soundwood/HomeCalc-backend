@@ -1,6 +1,7 @@
 class Scenario < ApplicationRecord
     belongs_to :prop_tax_rate
     belongs_to :mortg_interest_rate
+    belongs_to :user
 
     validates :net_income, presence: true
     validates :income_after_tax, presence: true

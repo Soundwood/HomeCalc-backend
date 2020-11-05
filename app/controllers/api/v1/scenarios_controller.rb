@@ -1,4 +1,4 @@
-class ScenariosController < ApplicationController
+class Api::V1::ScenariosController < ApplicationController
     before_action :set_scenario, only: [:show, :update, :destroy]
 
     def index
@@ -19,7 +19,7 @@ class ScenariosController < ApplicationController
         # render json: @scenario
     end
     def update
-        @pscenario.update(scenario_params)
+        @scenario.update(scenario_params)
         head :no_content
     end
     def destroy

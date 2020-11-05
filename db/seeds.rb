@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+user_a = User.create( username: "bob", password: "password")
+user_b = User.create( username: "jane", password: "password")
+user_c = User.create( username: "jill", password: "password")
+
 al=PropTaxRate.create( state: 'AL', tax_rate: 0.0042 )
 ak=PropTaxRate.create(  state: 'AK', tax_rate: 0.0118 )
 az=PropTaxRate.create(  state: 'AZ', tax_rate: 0.0069 )
@@ -74,9 +78,9 @@ po_20=MortgInterestRate.create( credit_score: 'poor', loan_length_yrs: 20, inter
 po_15=MortgInterestRate.create( credit_score: 'poor', loan_length_yrs: 15, interest_rate:  0.02975)
 po_10=MortgInterestRate.create( credit_score: 'poor', loan_length_yrs: 10, interest_rate:  0.02975)
 
-pers_a = Scenario.create(net_income: 100000, income_after_tax: 70000,
-     monthly_debt: 500, credit_score: 'good', downpayment: 20000, state: 'TX', city: 'Austin', prop_tax_rate_id: tx.id, mortg_interest_rate_id: gr_15.id)
-pers_b = Scenario.create(net_income: 75000, income_after_tax: 50000,
-     monthly_debt: 200, credit_score: 'poor', downpayment: 10000, state: 'TX', city: 'Dallas', prop_tax_rate_id: tx.id, mortg_interest_rate_id: gr_20.id)
-pers_c = Scenario.create(net_income: 85000, income_after_tax: 60000,
-     monthly_debt: 350, credit_score: 'fair', downpayment: 15000, state: 'TX', city: 'Houston', prop_tax_rate_id: tx.id, mortg_interest_rate_id: gr_30.id)
+scen_a = Scenario.create(net_income: 100000, income_after_tax: 70000, monthly_debt: 500, credit_score: 'good',
+     downpayment: 20000, state: 'TX', city: 'Austin', prop_tax_rate_id: tx.id, mortg_interest_rate_id: gr_15.id, user_id: user_a.id)
+scen_b = Scenario.create(net_income: 75000, income_after_tax: 50000, monthly_debt: 200, credit_score: 'poor',
+     downpayment: 10000, state: 'TX', city: 'Dallas', prop_tax_rate_id: tx.id, mortg_interest_rate_id: gr_20.id, user_id: user_b.id)
+scen_c = Scenario.create(net_income: 85000, income_after_tax: 60000, monthly_debt: 350, credit_score: 'fair',
+     downpayment: 15000, state: 'TX', city: 'Houston', prop_tax_rate_id: tx.id, mortg_interest_rate_id: gr_30.id, user_id: user_c.id)

@@ -1,2 +1,0 @@
-class MortgInterestRatesController < ApplicationController
-end
