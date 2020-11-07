@@ -2,8 +2,14 @@ class Api::V1::ScenariosController < ApplicationController
     before_action :set_scenario, only: [:show, :update, :destroy]
 
     def index
-        @scenarios = Scenario.all
-        render json: @scenarios
+        if logged_in?
+            @scenarios = current_user.scenarios
+            render json: @scenarios
+        else
+            render json: {
+                error: "You must be logged in"
+            }
+        end
     end
     def show
         render json: @scenario
