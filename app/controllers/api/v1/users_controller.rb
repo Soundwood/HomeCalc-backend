@@ -11,12 +11,13 @@ class Api::V1::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            render json: @user, status: :created, location: @user
+            session[:user_id] = @user.id
+            render json: @user, status: :created
         else
-            render json: @user.errors, status: :unprocessable_entity
+            render json: {
+                error: "#{@user.errors.full_messages.to_sentence}"
+            }
         end
-        # @user = User.create!(user_params)
-        # render json: @user
     end
     def update
         @user.update(user_params)
