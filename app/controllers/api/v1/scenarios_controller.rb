@@ -17,7 +17,7 @@ class Api::V1::ScenariosController < ApplicationController
     def create
         @scenario = Scenario.new(scenario_params)
         if @scenario.save
-            render json: @scenario, status: :created, location: @scenario
+            render json: @scenario, status: :created
         else
             render json: @scenario.errors, status: :unprocessable_entity
         end
@@ -37,7 +37,7 @@ class Api::V1::ScenariosController < ApplicationController
 
     def scenario_params
         params.require(:scenario).permit(:net_income, :income_after_tax, :monthly_debt, 
-            :credit_score, :downpayment, :state, :city, :prop_tax_rate_id, :mortg_interest_rate_id)
+            :credit_score, :downpayment, :state, :city, :prop_tax_rate_id, :mortg_interest_rate_id, :user_id)
     end
 
     def set_scenario
