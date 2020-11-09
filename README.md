@@ -1,3 +1,7 @@
+## React-Redux Frontend
+
+The associated React-Redux frontend for this project can be found [here](https://github.com/Soundwood/HomeCalc-frontend)
+
 # To-Do
 
 set up databases
