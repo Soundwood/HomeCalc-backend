@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users
       resources :scenarios
-      # resources :mortg_interest_rates
-      # resources :prop_tax_rates
+      resources :mortg_interest_rates, only: [:index]
+      resources :prop_tax_rates, only: [:index]
     end
   end
       
