@@ -29,8 +29,11 @@ class Api::V1::ScenariosController < ApplicationController
         head :no_content
     end
     def destroy
-        @scenario.destroy
-        head :no_content
+        if @scenario.destroy
+            render json: { data: "Scenario Destroyed" }, status: :ok
+        else
+            render json: { error: "Scenario not found and not destroyed" }, status: :unprocessable_entity
+        end
     end
 
     private
