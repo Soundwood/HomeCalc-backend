@@ -21,12 +21,13 @@ class Api::V1::ScenariosController < ApplicationController
         else
             render json: @scenario.errors, status: :unprocessable_entity
         end
-        # @scenario = Scenario.create!(scenario_params)
-        # render json: @scenario
     end
     def update
-        @scenario.update(scenario_params)
-        head :no_content
+        if @scenario.update(scenario_params)
+            render json:  @scenario, status: :ok
+        else
+            render json: @scenario.errors, status: :unprocessable_entity
+        end
     end
     def destroy
         if @scenario.destroy
