@@ -19,6 +19,7 @@ gem 'faker'
 gem 'pry'
 gem 'dotenv-rails'
 gem 'active_model_serializers'
+gem 'httparty'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

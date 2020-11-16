@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :scenarios
       resources :mortg_interest_rates, only: [:index]
       resources :prop_tax_rates, only: [:index]
+      resources :google_places_api, only: [:show]
     end
   end
       
