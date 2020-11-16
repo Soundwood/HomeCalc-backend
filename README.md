@@ -2,41 +2,12 @@
 
 The associated React-Redux frontend for this project can be found [here](https://github.com/Soundwood/HomeCalc-frontend)
 
-# To-Do
+# About
 
-set up databases
-    table scenario
-    columns:
-        net gross household income
-        income after tax
-        monthly recurring debt
-        credit score:   great - 720-850
-                        good - 690-719
-                        fair - 630-689
-                        poor - 300-629
-        downpayment
-        state
-        city
-    
-    table property tax rates
-    columns:
-        state: TX (two char state code)
-        rate: decimal rate
+HOMECALC API is intended to be used with the HOMECALC Frontend. The site allows a user to login and signup and keep track of their own 'scenarios'. These 'scenarios' include information like net income credit score and total monthly debt. No need to provide local property tax rates or mortgage interest rates. SMARTHOMECOST then uses this information and several 'Rules of Thumb' to determine how much home the user, given that particular scenario, can afford. The analysis of each are arranged from most to least frugal and provide some additional information such as the resulting monthly mortgage and tax costs.
 
-    table interest rates
-    columns:
-        credit score
-        length of loan
-        interest rate
+# How to Use / Setup
 
-M = P[r(1+r)^n/((1+r)^n)-1)]
-M= the total monthly mortgage payment.
-P= the principal loan amount.
-r= your monthly interest rate (3%/12=.0025)
-n= number of payments over the loan’s lifetime (30yr = 360)
-
-assuming Conventional fixed rate mortgage w/ great credit
-30-year fixed	2.875%
-20-year fixed	2.875%
-15-year fixed	2.375%
-10-year fixed	2.375%
+1. Clone this Repo
+2. Run 'bundle install' 'rails db:create' 'rails db:migrate' 'rails db:seed'
+3. Run 'rails s' to start the server (Frontend assumes backend API running on localhost:3000) 
