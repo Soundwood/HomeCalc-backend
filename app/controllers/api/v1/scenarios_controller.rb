@@ -41,7 +41,7 @@ class Api::V1::ScenariosController < ApplicationController
 
     def scenario_params
         params.require(:scenario).permit(:net_income, :income_after_tax, :monthly_debt, 
-            :credit_score, :downpayment, :state, :city, :prop_tax_rate_id, :mortg_interest_rate_id, :user_id)
+            :credit_score, :downpayment, :state, :city, :prop_tax_rate_id, :mortg_interest_rate_id, :user_id, :stars)
     end
 
     def set_scenario
